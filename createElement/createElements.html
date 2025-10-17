@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>Creating Elements</title>
+        <link rel="stylesheet" href="./styles0.css">
+
+    </head>
+    <body>
+
+        <div id="container">
+            <h2>Create List Demo</h2>
+            <button id="click-me">Make a List</button>
+            <button id="start-over">Let's do it again</button>
+            
+            <ul id="my-list">
+                <!--JS goes here!-->
+            </ul>
+        </div>
+        
+        <script>
+
+            const myList = ["list1", "list2", "list3", "list4", "list5", "list6", "list7"]
+
+            // Select buttons and list container
+            const createBtn = document.getElementById("click-me");
+            const startOverBtn = document.getElementById("start-over");
+            const ulList = document.querySelector("#my-list");
+
+            // Add event listener to the element which calls a function on an event
+            createBtn.addEventListener("click",() => makeList(myList, ulList, createBtn, startOverBtn));
+
+            // Add event listener to a hidden button
+            startOverBtn.addEventListener("click", () => resetList(ulList, createBtn, startOverBtn));
+
+
+            // Functions to be call by event listeners
+            function makeList(items, ul, btn, resetBtn) {
+                
+                items.forEach((item, index) => {
+                    // Create the element
+                    listItem = document.createElement("li");
+                    // Add an array element to the textContext
+                    listItem.textContent = item;
+                    // Add a style
+                    listItem.classList.add("list-style");
+                    // Set an attribute
+                    listItem.setAttribute("id", index + 1);
+                    // Append to list
+                    ul.appendChild(listItem);
+
+                    // Hide create button, show rest button
+                    btn.style.display = "none";
+                    resetBtn.style.display = "block";                  
+                });
+            } 
+
+            // Reset ul list
+            function resetList(ul, btn, resetBtn) {
+                ul.innerHTML = "";
+                btn.style.display = "block";
+                resetBtn.style.display = "none";
+               
+            }
+
+            ulList.addEventListener("mouseover", (event) => {
+                // Only list element trigger event handler
+                if (event.target.tagName === "LI") {
+                    event.target.style.backgroundColor = "blue";
+                    event.target.style.color = "white"
+                    console.log(event.target.innerHTML)
+                }
+            });
+
+            ulList.addEventListener("mouseout", (event) => {
+                if (event.target.tagName === "LI") {
+                    event.target.style.backgroundColor = "beige";
+                    event.target.style.color = "black";
+                }
+            });
+
+        </script>
+    </body>
+</html>

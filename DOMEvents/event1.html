@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Click Event</title>
+        <link rel="stylesheet" href="./event1.css">
+    </head>
+    <body>
+        <h2>DOM Events</h2>
+
+        <p id="text">This is a paragraph</p>
+
+        <button id="changeTextBtn">Change Text</button>
+        <button id="startAgainBtn">Start Again</button>
+
+        <script>
+            // Retrieve DOM elements
+            const button1 = document.querySelector("#changeTextBtn");
+            const button2 = document.querySelector("#startAgainBtn");
+            const paragraph = document.querySelector("#text");
+
+            // Add an event listener to handle the button click
+            button1.addEventListener("click", () => {
+                paragraph.textContent = "The text has been changed!";
+                button1.style.display = "none";
+                button2.style.display = "block";
+            });
+
+            button2.addEventListener("click", () => {
+                paragraph.textContent = "This is a paragraph"
+                button1.style.display = "block";
+                button2.style.display = "none";
+
+            })
+        </script>
+        
+    </body>
+</html>

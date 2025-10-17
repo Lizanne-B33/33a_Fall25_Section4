@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Bubbling Example</title>
+        <link rel="stylesheet" href="./demo1.css">
+    </head>
+    <body>
+        <h2>Bubbling example</h2>
+        
+        <form class="demo" id="form">The form element
+            <div class="demo" id="div">The div element
+                <p class="demo" id="p">The p element</p>
+            </div>
+        </form>
+
+    <script>
+        // Bubbling event propagation
+        document.querySelectorAll("*").forEach((elem) => {
+            elem.addEventListener("click", () => {
+                alert(`Bubbling: ${elem.tagName}`)
+            })
+        });
+
+        // Capture event propagation; not often used
+        // document.querySelectorAll("*").forEach((elem) => {
+        //     elem.addEventListener("click", () => {
+        //         alert(`Capturing: ${elem.tagName}`)
+        //     }, true)
+        // });
+
+    </script>
+
+    </body>
+</html>

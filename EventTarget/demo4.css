@@ -1,0 +1,43 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+h1 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+#parent-list {
+    padding: 0;
+    list-style-type: none;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 300px;
+}
+#parent-list li {
+    padding: 10px;
+    margin: 5px;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+#parent-list li:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+#parent-list li:nth-child(even) {
+    background-color: #e7f4f5;
+}
+#parent-list li:nth-child(odd) {
+    background-color: #ffffff;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM Selection Example</title>
+        <style>
+            body {
+                font-size: 2em;
+            }
+            h2 {
+                text-align: center;
+            }
+            #container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+            }
+            #container > p {
+                width: 60%;
+                padding: 15px;
+                border-radius: 12px;
+                border: 1px solid black;
+            }
+            .myclass {
+                background-color: beige;
+                font-style: italic;
+            }
+            button {
+                background-color: blue;
+                color: white;
+                border-radius: 12px;
+                width: 20%;
+                margin-bottom: 12px;
+            }
+            button:hover {
+                background-color: gray;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <h2>Select DOM Objects Example</h2>
+
+        <div id="container">
+
+            <p class="p-list" id="paragraph1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet magna ut est mattis.</p>
+            
+            <p class="p-list" id="paragraph2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet magna ut est mattis.</p>
+            
+            <p class="p-list">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet magna ut est mattis.</p>
+
+            <button id="button-submit0" type="text">Change the p 1</button>
+            <button id="button-submit1" type="text">Change the p 2</button>
+            <button id="button-submit2" type="text">Change all p elements</button>
+
+        </div>
+        
+
+        <script>
+
+            const paragraph1 = document.querySelector("#paragraph1");
+            const paragraph2 = document.querySelector("#paragraph2");
+            const paragraphs = document.querySelectorAll(".p-list");
+
+
+            document.querySelector("#button-submit0").addEventListener("click", function() {
+                 paragraph1.style.color = "blue";
+                
+                }   
+            );
+
+            document.querySelector("#button-submit1").addEventListener("click", function() {
+                paragraph2.textContent = "This is text that isn't nonsense.";
+            }
+                
+            );
+
+            document.querySelector("#button-submit2").addEventListener("click", function() {
+                
+                paragraphs.forEach(item => {
+                // item.style.backgroundColor = "beige";
+                // item.style.fontStyle = "italic";
+                
+                // even better //
+                item.classList.add("myclass");
+                })
+            }
+            );
+
+        </script>
+
+    </body>
+</html>

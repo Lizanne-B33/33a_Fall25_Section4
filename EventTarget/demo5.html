@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Event</title>
+    <link rel="stylesheet" href="./demo5.css">
+
+</head>
+<body>
+
+    <div id="container">
+        <label for="nameInput">Enter your name:</label>
+        <input type="text" id="nameInput">
+        <p id="displayText">Your name will appear here.</p>
+    </div>
+
+    <script>
+        // Select the input and paragraph elements
+        const input = document.getElementById("nameInput");
+        const display = document.getElementById("displayText");
+
+        // Add input event listener for any change to the value of an input element
+        input.addEventListener('input', (event) => {
+            display.textContent = `Hello, ${event.target.value}!`;
+        });
+    </script>
+</body>
+</html>

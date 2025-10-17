@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Click Event</title>
+        <link rel="stylesheet" href="./event3.css">
+
+    </head>
+    <body>
+
+        <button id="eventObjBtn">Show Event Object</button>
+
+        <script>
+            const objButton = document.querySelector("#eventObjBtn");
+            
+            objButton.addEventListener("click", (e) => {
+                console.log(e);
+            });
+        </script>
+        
+    </body>
+</html>

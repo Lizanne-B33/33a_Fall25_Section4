@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mouseover Event</title>
+        <link rel="stylesheet" href="./event2.css">
+    </head>
+    <body>
+        <h3>Mouse in/ Mouse out</h3>
+        
+        <div id="hoverDiv">Hover over me!</div>
+
+        <script>
+            // Select the div element
+            const div = document.getElementById("hoverDiv");
+
+            // Add mouseover event listener
+            div.addEventListener('mouseover', () => {
+                div.style.backgroundColor = "lightgreen";
+                div.textContent = "Text is changing!"
+            });
+
+            // Add mouseout event listener to reset the background color
+            div.addEventListener('mouseout', () => {
+                div.style.backgroundColor = "lightblue";
+                div.textContent = "Hover over me!"
+            });
+        </script>
+    </body>
+</html>
