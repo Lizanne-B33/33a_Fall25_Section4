@@ -14,15 +14,22 @@
                 <p class="demo" id="p">The p element</p>
             </div>
         </form>
-
+    
+    // Important because this shows how the traversing can help make code dryer
+    // means register event on a parent without having to event on every one of the child elements. 
+        // 
     <script>
         // Bubbling event propagation
+        // getting every element in the DOM, Do NOT Do!
         document.querySelectorAll("*").forEach((elem) => {
             elem.addEventListener("click", () => {
                 alert(`Bubbling: ${elem.tagName}`)
             })
         });
 
+        //With these un-commented, then the dom traverses the oposite way. 
+        // dont want to do.  just how capturing and bubling of elements work. 
+        
         // Capture event propagation; not often used
         // document.querySelectorAll("*").forEach((elem) => {
         //     elem.addEventListener("click", () => {
